@@ -9,9 +9,10 @@ package sample
 
 import (
 	"context"
+	"encoding/xml"
 )
 
-// 店舗アカウントの認証関連を行う
+// 数値をそのまま返す
 type Service interface {
 	// Login implements login.
 	Login(context.Context, *LoginPayload) (res *LoginResult, err error)
@@ -34,7 +35,9 @@ type LoginPayload struct {
 
 // LoginResult is the result type of the sample service login method.
 type LoginResult struct {
+	XMLName    *xml.Name `xml:"cat"`
 	ResultTmp1 *struct {
-		ResultTmp2 *int
+		ResultTmp2 *int `xml:"custcode_list,omitempty"`
 	}
+	ResultTmp3 *int
 }

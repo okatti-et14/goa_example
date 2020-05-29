@@ -22,6 +22,7 @@ import (
 func EncodeLoginResponse(encoder func(context.Context, http.ResponseWriter) goahttp.Encoder) func(context.Context, http.ResponseWriter, interface{}) error {
 	return func(ctx context.Context, w http.ResponseWriter, v interface{}) error {
 		res := v.(*sample.LoginResult)
+		ctx = context.WithValue(ctx, goahttp.ContentTypeKey, "application/xml")
 		enc := encoder(ctx, w)
 		body := NewLoginResponseBody(res)
 		w.WriteHeader(http.StatusOK)

@@ -20,7 +20,7 @@ func NewSample(logger *log.Logger) sample.Service {
 // Login implements login.
 func (s *samplesrvc) Login(ctx context.Context, p *sample.LoginPayload) (res *sample.LoginResult, err error) {
 	res = &sample.LoginResult{
-		ResultTmp1: &struct{ ResultTmp2 *int }{1},
+		ResultTmp3: &p.RequestTmp,
 	}
 	s.logger.Print("sample.login")
 	return

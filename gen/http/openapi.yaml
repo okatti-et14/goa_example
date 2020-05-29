@@ -20,6 +20,8 @@ paths:
       - sample
       summary: login sample
       operationId: sample#login
+      produces:
+      - application/xml
       parameters:
       - name: request_tmp
         in: query
@@ -37,15 +39,24 @@ definitions:
     title: SampleLoginResponseBody
     type: object
     properties:
+      XMLName:
+        type: string
+        example: Molestiae soluta rem dignissimos.
       result_tmp1:
         type: object
         properties:
           result_tmp2:
             type: integer
-            example: 4570322300032549106
+            example: 2279190139376579880
             format: int64
         example:
-          result_tmp2: 349398368239076713
+          result_tmp2: 5055606733223162898
+      result_tmp3:
+        type: integer
+        example: 2986734667709101715
+        format: int64
     example:
+      XMLName: Cumque ipsam vel dolor omnis dignissimos.
       result_tmp1:
-        result_tmp2: 303369712990783481
+        result_tmp2: 3188429226741909665
+      result_tmp3: 8735278349679104463

@@ -29,7 +29,7 @@ func UsageCommands() string {
 
 // UsageExamples produces an example of a valid invocation of the CLI tool.
 func UsageExamples() string {
-	return os.Args[0] + ` sample login --request-tmp 1146642229173006676` + "\n" +
+	return os.Args[0] + ` sample login --request-tmp 4263391591091135085` + "\n" +
 		""
 }
 
@@ -128,7 +128,7 @@ func ParseEndpoint(
 
 // sampleUsage displays the usage of the sample command and its subcommands.
 func sampleUsage() {
-	fmt.Fprintf(os.Stderr, `店舗アカウントの認証関連を行う
+	fmt.Fprintf(os.Stderr, `数値をそのまま返す
 Usage:
     %s [globalflags] sample COMMAND [flags]
 
@@ -146,6 +146,6 @@ Login implements login.
     -request-tmp INT: 
 
 Example:
-    `+os.Args[0]+` sample login --request-tmp 1146642229173006676
+    `+os.Args[0]+` sample login --request-tmp 4263391591091135085
 `, os.Args[0])
 }
