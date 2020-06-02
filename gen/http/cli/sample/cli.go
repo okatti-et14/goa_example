@@ -29,7 +29,7 @@ func UsageCommands() string {
 
 // UsageExamples produces an example of a valid invocation of the CLI tool.
 func UsageExamples() string {
-	return os.Args[0] + ` sample login --request-tmp 4263391591091135085` + "\n" +
+	return os.Args[0] + ` sample login --request-tmp 1737945077937721419` + "\n" +
 		""
 }
 
@@ -146,6 +146,6 @@ Login implements login.
     -request-tmp INT: 
 
 Example:
-    `+os.Args[0]+` sample login --request-tmp 4263391591091135085
+    `+os.Args[0]+` sample login --request-tmp 1737945077937721419
 `, os.Args[0])
 }

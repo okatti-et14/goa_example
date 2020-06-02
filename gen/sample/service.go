@@ -39,5 +39,5 @@ type LoginResult struct {
 	ResultTmp1 *struct {
 		ResultTmp2 *int `xml:"custcode_list,omitempty"`
 	}
-	ResultTmp3 *int
+	ResultTmp3 *string
 }

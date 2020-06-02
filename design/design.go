@@ -1,6 +1,9 @@
 package design
 
-import . "goa.design/goa/v3/dsl"
+import (
+	. "goa.design/goa/v3/dsl"
+	"goa.design/goa/v3/expr"
+)
 
 var _ = API("sample", func() {
 	Title("sample API")
@@ -21,7 +24,6 @@ var _ = Service("sample", func() {
 	Description("数値をそのまま返す")
 	Method("login", func() {
 		Result(func() {
-			//TypeName("cat")
 			Attribute("XMLName", func() {
 				Meta("struct:field:type", "xml.Name", "encoding/xml")
 				Meta("struct:tag:xml", "cat")
@@ -31,7 +33,9 @@ var _ = Service("sample", func() {
 					Meta("struct:tag:xml", "custcode_list,omitempty")
 				})
 			})
-			Attribute("result_tmp3", Int)
+			Attribute("result_tmp3", String, func() {
+				Format(expr.FormatDateTime)
+			})
 		})
 		HTTP(func() {
 			GET("/")
@@ -48,16 +52,3 @@ var _ = Service("sample", func() {
 		})
 	})
 })
-
-/*
-var Dog = Type("Dog", func() {
-	TypeName("cat")
-	Attribute("result_tmp1", func() {
-		Attribute("result_tmp2", Int, func() {
-			Meta("struct:tag:xml", "custcode_list,omitempty")
-		})
-	})
-	Attribute("result_tmp3", Int)
-})
-
-*/

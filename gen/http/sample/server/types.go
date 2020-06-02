@@ -19,7 +19,7 @@ type LoginResponseBody struct {
 	ResultTmp1 *struct {
 		ResultTmp2 *int `xml:"custcode_list,omitempty"`
 	} `form:"result_tmp1,omitempty" json:"result_tmp1,omitempty" xml:"result_tmp1,omitempty"`
-	ResultTmp3 *int `form:"result_tmp3,omitempty" json:"result_tmp3,omitempty" xml:"result_tmp3,omitempty"`
+	ResultTmp3 *string `form:"result_tmp3,omitempty" json:"result_tmp3,omitempty" xml:"result_tmp3,omitempty"`
 }
 
 // NewLoginResponseBody builds the HTTP response body from the result of the

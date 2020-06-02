@@ -19,8 +19,9 @@ func NewSample(logger *log.Logger) sample.Service {
 
 // Login implements login.
 func (s *samplesrvc) Login(ctx context.Context, p *sample.LoginPayload) (res *sample.LoginResult, err error) {
+	fake := "2020/12/10"
 	res = &sample.LoginResult{
-		ResultTmp3: &p.RequestTmp,
+		ResultTmp3: &fake,
 	}
 	s.logger.Print("sample.login")
 	return

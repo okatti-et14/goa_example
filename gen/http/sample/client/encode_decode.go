@@ -76,6 +76,10 @@ func DecodeLoginResponse(decoder func(*http.Response) goahttp.Decoder, restoreBo
 			if err != nil {
 				return nil, goahttp.ErrDecodingError("sample", "login", err)
 			}
+			err = ValidateLoginResponseBody(&body)
+			if err != nil {
+				return nil, goahttp.ErrValidationError("sample", "login", err)
+			}
 			res := NewLoginResultOK(&body)
 			return res, nil
 		default:
